@@ -1,0 +1,39 @@
+{
+  "name": "singlish-pro",
+  "version": "1.0.0",
+  "description": "A high-performance, phonetic Singlish-to-Sinhala transliteration engine for web applications.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "unpkg": "dist/index.umd.js",
+  "source": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "singlish",
+    "sinhala",
+    "transliteration",
+    "unicode",
+    "sri lanka",
+    "helakuru",
+    "phonetic"
+  ],
+  "author": "dmchanaka",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmchanaka/singlish-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dmchanaka/singlish-pro/issues"
+  },
+  "homepage": "https://github.com/dmchanaka/singlish-pro#readme",
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  }
+}
