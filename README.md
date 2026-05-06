@@ -186,7 +186,7 @@ Stay productive with built-in shortcuts:
 
 ## 🔗 Live Demo
 Want to see it in action?
-[**Try the Live Demo**](https://dmcchanaka.github.io/singlish-pro/)
+[**Try the Live Demo**](https://dmcchanaka.github.io/singlish-pro-npm/)
 
 ## 📜 License
 MIT © [dmcchanaka](https://github.com/dmcchanaka)

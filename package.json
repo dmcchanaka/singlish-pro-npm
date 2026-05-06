@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
   "source": "src/index.js",
   "files": [
     "dist"
