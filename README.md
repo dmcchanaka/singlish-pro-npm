@@ -4,10 +4,30 @@ A high-performance, professional-grade Singlish-to-Sinhala transliteration engin
 
 ## 🚀 Features
 - **Buffer-Based Accuracy**: Handles complex sounds like `ch`, `th`, `aa` and `sh` perfectly.
-- **Built-in UI**: Ready-to-use toggle button and a stylish keyboard guide modal.
+- **Custom Phonetic Layout**: Tailored for natural typing (e.g., `t` → **ට**, `th` → **ත**).
+- **Smart Clusters**: Built-in logic for names like **"Chaminda"** (**න්ද**) and **"Lanka"** (**න්ක**).
+- **Built-in UI**: Ready-to-use toggle button and a redesigned, stylish keyboard guide modal.
 - **Framework Ready**: Native support for React, Next.js, Vue, Nuxt, Angular, and Laravel.
 - **Lightweight**: Zero dependencies, keeping your bundle size small.
-- **Intelligent Hal (්)**: Automatically handles vowel-consonant combinations correctly.
+
+---
+
+## ⌨️ Phonetic Mapping (v1.2.0)
+
+Singlish Pro uses an intuitive hybrid mapping optimized for common usage:
+
+| Key | Sinhala | Example |
+| :--- | :--- | :--- |
+| **t** | **ට** | ටිකක් (tikak) |
+| **th** | **ත** | තනියම (thaniyama) |
+| **d** | **ද** | දවසක් (dawasak) |
+| **D** | **ඩ** | ඩොක්ටර් (Doktar) |
+| **nd** | **න්ද** | චාමින්ද (chaminda) |
+| **aa** | **ා** | කාර් (kaar) |
+
+*For more combinations, click the **"?"** button in the built-in UI guide.*
+
+---
 
 ---
 

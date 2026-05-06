@@ -1,4 +1,4 @@
-import { transliterate } from '../core/Converter';
+import { transliterate } from '../core/Converter.js';
 
 export class SinglishInstance {
     constructor(element, options = {}) {

@@ -1,4 +1,4 @@
-import { VOWELS, VOWEL_SIGNS, CONSONANTS, HAL } from './mapping';
+import { VOWELS, VOWEL_SIGNS, CONSONANTS, HAL, ZWJ } from './mapping.js';
 
 export function transliterate(text, options = {}) {
     const { finalize = false } = options;
@@ -10,17 +10,14 @@ export function transliterate(text, options = {}) {
         for (let key of keys) {
             if (str.substring(start, start + key.length) === key) return { value: dict[key], length: key.length };
         }
-        for (let key of keys) {
-            if (str.substring(start, start + key.length).toLowerCase() === key.toLowerCase()) return { value: dict[key], length: key.length };
-        }
         return null;
     };
 
     while (i < text.length) {
         let match = null;
 
-        // 1. Stand-alone Vowels
-        if (i === 0) {
+        // 1. Stand-alone Vowels (at start of string or after space/punctuation)
+        if (i === 0 || /[\s\.,!\?;:()\[\]{}]/.test(text[i - 1])) {
             match = matchLongest(text, i, VOWELS);
             if (match) {
                 result += match.value;
@@ -42,7 +39,7 @@ export function transliterate(text, options = {}) {
             if (!vMatch && nextPos < text.length && text[nextPos].toLowerCase() === 'r') {
                  let vMatchAfterR = matchLongest(text, nextPos + 1, VOWEL_SIGNS);
                  if (vMatchAfterR) {
-                     result += consonantUnicode + HAL + 'ර' + vMatchAfterR.value;
+                     result += consonantUnicode + HAL + ZWJ + 'ර' + vMatchAfterR.value;
                      i = nextPos + 1 + vMatchAfterR.length;
                      continue;
                  }
@@ -52,7 +49,7 @@ export function transliterate(text, options = {}) {
             if (!vMatch && nextPos < text.length && text[nextPos].toLowerCase() === 'y') {
                  let vMatchAfterY = matchLongest(text, nextPos + 1, VOWEL_SIGNS);
                  if (vMatchAfterY) {
-                     result += consonantUnicode + HAL + 'ය' + vMatchAfterY.value;
+                     result += consonantUnicode + HAL + ZWJ + 'ය' + vMatchAfterY.value;
                      i = nextPos + 1 + vMatchAfterY.length;
                      continue;
                  }

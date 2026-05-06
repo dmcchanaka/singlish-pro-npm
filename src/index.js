@@ -1,7 +1,7 @@
-import { SinglishInstance } from './adapters/vanilla';
-import { transliterate } from './core/Converter';
-import { createToggleButton } from './ui/ToggleButton';
-import { createGuideModal } from './ui/GuideModal';
+import { SinglishInstance } from './adapters/vanilla.js';
+import { transliterate } from './core/Converter.js';
+import { createToggleButton } from './ui/ToggleButton.js';
+import { createGuideModal } from './ui/GuideModal.js';
 
 export { transliterate, SinglishInstance };
 
