@@ -99,34 +99,56 @@ console.log(result); // ඔයාට කොහොමද?
 ### 3. React / Next.js
 *Step-by-step for modern React apps.*
 
-**Step 1:** Create a custom hook `hooks/useSinglish.js`:
+**Step 1:** Add the package to your transpilation list (Required for Next.js 13+):
+Open `next.config.mjs` (or `next.config.js`) and add:
+```javascript
+const nextConfig = {
+  transpilePackages: ['singlish-pro'],
+};
+```
+
+**Step 2:** Create a custom hook `hooks/useSinglish.js`:
 ```javascript
 import { useEffect, useRef } from 'react';
 import Singlish from 'singlish-pro';
 
-export function useSinglish() {
+export function useSinglish(options = {}) {
     const singlishRef = useRef(null);
 
     useEffect(() => {
-        // Ensure it only runs in the browser
         if (typeof window !== 'undefined' && !singlishRef.current) {
-            singlishRef.current = new Singlish({ showUI: true });
+            // Handle default export correctly for ESM/CJS environments
+            const SinglishClass = Singlish.default || Singlish;
+            singlishRef.current = new SinglishClass({
+                showUI: true,
+                enabled: false,
+                ...options
+            });
         }
-        return () => singlishRef.current?.destroy();
+
+        return () => {
+            if (singlishRef.current) {
+                singlishRef.current.destroy();
+                singlishRef.current = null;
+            }
+        };
     }, []);
 }
 ```
 
-**Step 2:** Use the hook in your component (e.g., `app/page.js`):
+**Step 3:** Use the hook in your component (e.g., `app/page.js`):
 ```javascript
 'use client';
-import { useSinglish } from './hooks/useSinglish';
+import { useSinglish } from '../hooks/useSinglish';
 
 export default function Home() {
-    useSinglish(); // This activates Singlish for all inputs on this page
+    useSinglish(); // Activates Singlish for all inputs on this page
 
     return (
-        <textarea placeholder="Type here..." />
+        <div>
+            <input type="text" placeholder="Subject" />
+            <textarea placeholder="Message" />
+        </div>
     );
 }
 ```
@@ -140,29 +162,47 @@ export default function Home() {
 ```javascript
 import Singlish from 'singlish-pro';
 
-export const useSinglish = () => {
+export const useSinglish = (options = {}) => {
   const singlish = ref(null);
 
   onMounted(() => {
-    if (process.client) {
-      singlish.value = new Singlish({ showUI: true });
+    // Use universal browser check
+    if (typeof window !== 'undefined') {
+      singlish.value = new Singlish({
+        showUI: true,
+        enabled: false,
+        ...options
+      });
     }
   });
 
-  onUnmounted(() => singlish.value?.destroy());
+  onUnmounted(() => {
+    if (singlish.value) {
+      singlish.value.destroy();
+    }
+  });
+
+  return singlish;
 };
 ```
 
 **Step 2:** Use it in your component or `app.vue`:
 ```vue
 <script setup>
-useSinglish();
+// Nuxt automatically imports the composable if it's in the /composables folder
+const singlish = useSinglish();
 </script>
 
 <template>
-  <textarea placeholder="Type in Singlish..." />
+  <div>
+    <input type="text" placeholder="Title" />
+    <textarea placeholder="Description" />
+  </div>
 </template>
 ```
+
+> [!TIP]
+> If you are using Nuxt 3 with an `app/` directory (Nuxt 4 style), ensure you have `srcDir: 'app'` set in your `nuxt.config.ts`.
 
 ---
 

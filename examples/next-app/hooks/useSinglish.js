@@ -6,7 +6,8 @@ export function useSinglish(options = {}) {
 
     useEffect(() => {
         if (typeof window !== 'undefined' && !singlishRef.current) {
-            singlishRef.current = new Singlish({
+            const SinglishClass = Singlish.default || Singlish;
+            singlishRef.current = new SinglishClass({
                 showUI: true,
                 enabled: false,
                 ...options

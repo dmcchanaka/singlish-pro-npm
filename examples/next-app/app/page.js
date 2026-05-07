@@ -15,7 +15,14 @@ export default function Home() {
         </p>
         
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Type here (Press Ctrl+Shift+S to toggle)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Subject (Single Line)</label>
+          <input 
+            type="text"
+            className="w-full p-4 mb-4 text-lg border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+            placeholder="Subject..."
+          />
+
+          <label className="block text-sm font-medium text-gray-700 mb-2">Message (Press Ctrl+Shift+S to toggle)</label>
           <textarea 
             className="w-full h-48 p-4 text-xl border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
             placeholder="e.g. kohomada? hodaida?"
