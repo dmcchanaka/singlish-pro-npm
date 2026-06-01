@@ -23,7 +23,7 @@ export const VOWEL_SIGNS = {
     'ee': 'ේ', 'e': 'ෙ', 'oo': 'ෝ', 'o': 'ො', 
     'ai': 'ෛ', 'au': 'ෞ',
     'ru': 'ෘ', 'ruu': 'ෲ',
-    'li': 'ෟ', 'lii': 'ෳ'
+    'lR': 'ෟ', 'lRR': 'ෳ'
 };
 
 export const CONSONANTS = {

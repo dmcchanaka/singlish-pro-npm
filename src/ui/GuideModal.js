@@ -59,7 +59,7 @@ export function createGuideModal() {
                             <span style="font-weight:700; color:#c2410c;">M / o / H</span> <span>ං ං ඃ</span>
                         </div>
                         <div style="background:#fff7ed; padding:10px; border-radius:10px; border:1px solid #ffedd5; display:flex; justify-content:space-between; font-size:13px;">
-                            <span style="font-weight:700; color:#c2410c;">kr / ky</span> <span>ක්‍ර ක්‍ය</span>
+                            <span style="font-weight:700; color:#c2410c;">kr / ky / lR / lRR</span> <span>ක්‍ර ක්‍ය කෟ කෳ</span>
                         </div>
                     </div>
                 </section>
@@ -88,8 +88,8 @@ export function createGuideModal() {
                             <div style="display:flex; justify-content:space-between;"><span>nd, nt, mb</span> <b>න්ද න්ත ම්බ</b></div>
                         </div>
                         <div style="background:#f0fdf4; padding:10px; border-radius:10px; border:1px solid #dcfce7; font-size:12.5px;">
-                            <div style="font-weight:700; color:#166534; margin-bottom:3px;">Sanyaka</div>
-                            <div style="display:flex; justify-content:space-between;"><span>nng, nndh</span> <b>ඟ ඳ</b></div>
+                            <div style="font-weight:700; color:#166534; margin-bottom:3px;">Sanyaka / Special</div>
+                            <div style="display:flex; justify-content:space-between;"><span>nng, nndh, ny, gn</span> <b>ඟ ඳ ඤ ඥ</b></div>
                         </div>
                     </div>
                 </section>
