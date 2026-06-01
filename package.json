@@ -1,6 +1,6 @@
 {
   "name": "singlish-pro",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A high-performance, phonetic Singlish-to-Sinhala transliteration engine for web applications.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

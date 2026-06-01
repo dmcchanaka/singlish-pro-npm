@@ -12,7 +12,7 @@ A high-performance, professional-grade Singlish-to-Sinhala transliteration engin
 
 ---
 
-## ⌨️ Phonetic Mapping (v1.2.0)
+## ⌨️ Phonetic Mapping (v1.2.1)
 
 Singlish Pro uses an intuitive hybrid mapping optimized for common usage:
 
